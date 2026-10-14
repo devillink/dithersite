@@ -1,0 +1,37 @@
+.glow-btn {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(45deg, #ff357a, #fff172, #2563eb);
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: background 0.5s;
+}
+.glow-btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff357a, #fff172, #2563eb);
+  background-size: 200% 200%;
+  z-index: -1;
+  border-radius: 50px;
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.glow-btn:hover {
+  background-position: 100% 50%;
+}
+.glow-btn:hover::before {
+  opacity: 1;
+  background-position: 100% 50%;
+}
